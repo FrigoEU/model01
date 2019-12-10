@@ -1,16 +1,23 @@
 { arduino, bash
-, stdenv, fetchgit
+, lib, stdenv, fetchgit
 }:
 
 let
-  keyboardio = import ./nix/git-from-json.nix {
-    inherit fetchgit;
-    json = ./nix/pkgs/bundle.json;
+  source = json: import ./nix/git-from-json.nix {
+    inherit fetchgit json;
   };
-  firmware = import ./nix/git-from-json.nix {
-    inherit fetchgit;
-    json = ./nix/pkgs/firmware.json;
+
+  keyboardio = source ./nix/pkgs/bundle.json;
+  firmware = source ./nix/pkgs/firmware.json;
+
+  plugins = {
+    "Kaleidoscope-ModifierLayers" = source ./nix/pkgs/modifierLayers.json;
   };
+
+  copyPlugins = dest:
+    builtins.concatStringsSep "\n" (lib.mapAttrsToList
+      (name: path: "cp -rL ${path} ${dest}/${name}")
+      plugins);
 
 in
 stdenv.mkDerivation {
@@ -21,13 +28,14 @@ stdenv.mkDerivation {
   src = [
     keyboardio
     firmware
-  ];
+  ] ++ builtins.attrValues plugins;
 
   unpackPhase = ''
     mkdir -p ./madkeys/hardware
     cp -rL ${keyboardio} ./madkeys/hardware/keyboardio
     cp -rL ${firmware} ./madkeys/Model01-Firmware
-  '';
+    mkdir -p ./madkeys/libraries
+  '' + (copyPlugins "./madkeys/libraries");
 
   patchPhase = ''
     chmod u+w -R .
