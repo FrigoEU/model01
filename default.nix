@@ -20,12 +20,13 @@ let
       plugins);
 
 in
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "madkeys";
   version = "1.0";
 
   buildInputs = [ arduino bash ];
   src = [
+    ./src
     keyboardio
     firmware
   ] ++ builtins.attrValues plugins;
@@ -34,8 +35,10 @@ stdenv.mkDerivation {
     mkdir -p ./madkeys/hardware
     cp -rL ${keyboardio} ./madkeys/hardware/keyboardio
     cp -rL ${firmware} ./madkeys/Model01-Firmware
+    chmod u+w ./madkeys/Model01-Firmware/Model01-Firmware.ino
+    cp -f ${builtins.head src}/Model01-Firmware.ino ./madkeys/Model01-Firmware/
     mkdir -p ./madkeys/libraries
-  '' + (copyPlugins "./madkeys/libraries");
+  '' + (copyPlugins "./madkeys");
 
   patchPhase = ''
     chmod u+w -R .
@@ -43,16 +46,17 @@ stdenv.mkDerivation {
   '';
 
   buildPhase = ''
-    mkdir $out
+    mkdir -p $out/lib
+
     cd ./madkeys/Model01-Firmware
     export SKETCHBOOK_DIR="/build/madkeys"
     export ARDUINO_PATH=${arduino}/share/arduino
-    export OUTPUT_PATH=$out
+    export OUTPUT_PATH=$out/lib
     make
   '';
 
   installPhase = ''
-    true
+    install -D -t $out/lib/udev/rules.d ../hardware/keyboardio/avr/libraries/Kaleidoscope/etc/99-kaleidoscope.rules
   '';
 
   description = "Keymaps for Model 01 keyboard";
