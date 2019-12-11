@@ -1,4 +1,4 @@
-{ arduino, bash
+{ arduino, avrdude, bash
 , lib, stdenv, fetchgit
 }:
 
