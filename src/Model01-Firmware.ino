@@ -34,6 +34,7 @@
 #include "Kaleidoscope-ModifierLayers.h"
 #include "Kaleidoscope-OneShot.h"
 #include "Kaleidoscope-Escape-OneShot.h"
+#include "Kaleidoscope-Qukeys.h"
 
 enum { Base
      , Numbers // Programmer dvorak numbers layout
@@ -202,6 +203,7 @@ USE_MAGIC_COMBOS({.action = toggleKeyboardProtocol,
 // The order can be important. For example, LED effects are
 // added in the order they're listed here.
 KALEIDOSCOPE_INIT_PLUGINS(
+  Qukeys,
   // The EEPROMSettings & EEPROMKeymap plugins make it possible to have an
   // editable keymap in EEPROM.
   EEPROMSettings,
@@ -309,6 +311,16 @@ static const kaleidoscope::ModifierLayers::overlay_t overlays[] = {
  * Kaleidoscope and any plugins.
  */
 void setup() {
+  QUKEYS(
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 7), LSHIFT(Key_9)), // shift / (
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 8), LSHIFT(Key_0)), // shift / )
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(3, 7), LSHIFT(Key_9)), // alt / {
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(3, 8), LSHIFT(Key_0))  // alt / }
+  )
+
+  Qukeys.setHoldTimeout(1000);
+  Qukeys.setOverlapThreshold(50);
+
   // First, call Kaleidoscope's internal setup function
   Kaleidoscope.setup();
 
