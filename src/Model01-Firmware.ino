@@ -58,7 +58,7 @@ KEYMAPS(
    Key_F12,           LSHIFT(Key_8),   LSHIFT(Key_6),           LSHIFT(Key_Equals),       Key_RightBracket, LSHIFT(Key_1), LSHIFT(Key_3),
    LSHIFT(Key_4),     Key_F,           Key_G,                   Key_C,                    Key_R,            Key_L,         Key_Slash,
                       Key_D,           Key_H,                   Key_T,                    Key_N,            Key_S,         Key_Minus,
-   Key_RightGui,      Key_B,           Key_M,                   Key_W,                    Key_V,            Key_Z,         Key_Pipe,
+   Key_RightGui,      Key_B,           Key_M,                   Key_W,                    Key_V,            Key_Z,         Key_Backslash,
    Key_RightAlt,      Key_RightShift,  Key_Spacebar,            Key_Enter,
    Key_RightControl),
 
