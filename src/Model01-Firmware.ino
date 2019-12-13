@@ -314,8 +314,8 @@ void setup() {
   QUKEYS(
     kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 7), LSHIFT(Key_9)), // shift / (
     kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 8), LSHIFT(Key_0)), // shift / )
-    kaleidoscope::plugin::Qukey(Base, KeyAddr(3, 7), LSHIFT(Key_9)), // alt / {
-    kaleidoscope::plugin::Qukey(Base, KeyAddr(3, 8), LSHIFT(Key_0))  // alt / }
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(3, 7), LSHIFT(Key_LeftBracket)), // alt / {
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(3, 8), LSHIFT(Key_RightBracket))  // alt / }
   )
 
   Qukeys.setHoldTimeout(1000);
