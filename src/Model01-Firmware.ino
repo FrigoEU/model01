@@ -66,13 +66,13 @@ KEYMAPS(
   // held. The ModifierLayers plugin allows us to specify this as a keymap.
   [Numbers] = KEYMAP_STACKED
   (___, Key_7, Key_5, Key_3, Key_1, Key_9, ___,
-   ___, ___, ___, ___, ___, ___, ___,
+   LSHIFT(Key_7), ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___,
    ___,
 
-   ___, Key_0, Key_2, Key_4, Key_6, Key_8, Key_Backtick,
+   ___, Key_0, Key_2, Key_4, Key_6, Key_8, LSHIFT(Key_Backtick),
    ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___, ___,
