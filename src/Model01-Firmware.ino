@@ -52,14 +52,14 @@ KEYMAPS(
    Key_Backtick,      Key_Quote,       Key_Comma,               Key_Period,               Key_P,            Key_Y,         Key_Tab,
    Key_PageUp,        Key_A,           Key_O,                   Key_E,                    Key_U,            Key_I,
    Key_PageDown,      Key_Semicolon,   Key_Q,                   Key_J,                    Key_K,            Key_X,         Key_Escape,
-   Key_Delete,        Key_Backspace,   Key_LeftShift,           Key_LeftAlt,
+   Key_Delete,        Key_Backspace,   Key_LeftShift,           Key_RightAlt,
    Key_LeftControl,
 
    Key_F12,           LSHIFT(Key_8),   LSHIFT(Key_6),           LSHIFT(Key_Equals),       Key_RightBracket, LSHIFT(Key_1), LSHIFT(Key_3),
    LSHIFT(Key_4),     Key_F,           Key_G,                   Key_C,                    Key_R,            Key_L,         Key_Slash,
                       Key_D,           Key_H,                   Key_T,                    Key_N,            Key_S,         Key_Minus,
    Key_RightGui,      Key_B,           Key_M,                   Key_W,                    Key_V,            Key_Z,         Key_Pipe,
-   Key_LeftAlt,       Key_RightShift,  Key_Spacebar,            Key_Enter,
+   Key_RightAlt,      Key_RightShift,  Key_Spacebar,            Key_Enter,
    Key_RightControl),
 
   // Programmer Dvorak overrides the behavior of a number of keys when shift is
