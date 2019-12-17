@@ -312,6 +312,17 @@ static const kaleidoscope::ModifierLayers::overlay_t overlays[] = {
  */
 void setup() {
   QUKEYS(
+    // Let's what the homerow modifiers feel like
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 1), Key_RightAlt),    // right alt  / a
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 2), Key_LeftAlt),     // left alt   / o
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 3), Key_LeftShift),   // left shift / e
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 4), Key_LeftControl), // left ctrl  / u
+
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 14), Key_RightAlt),     // right alt  / s
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 13), Key_LeftAlt),      // left alt   / n
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 12), Key_RightShift),   // right shift / t
+    kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 11), Key_RightControl), // right ctrl  / h
+
     kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 7), LSHIFT(Key_9)), // shift / (
     kaleidoscope::plugin::Qukey(Base, KeyAddr(2, 8), LSHIFT(Key_0)), // shift / )
     kaleidoscope::plugin::Qukey(Base, KeyAddr(3, 7), LSHIFT(Key_LeftBracket)), // alt / {
