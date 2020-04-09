@@ -43,25 +43,25 @@
 #include "Kaleidoscope-LEDEffect-BootGreeting.h"
 
 // Support for LED modes that set all LEDs to a single color
-#include "Kaleidoscope-LEDEffect-SolidColor.h"
+// #include "Kaleidoscope-LEDEffect-SolidColor.h"
 
 // Support for an LED mode that makes a red pixel chase a blue pixel across the keyboard
-#include "Kaleidoscope-LEDEffect-Chase.h"
+// #include "Kaleidoscope-LEDEffect-Chase.h"
 
 // Support for LED modes that pulse the keyboard's LED in a rainbow pattern
-#include "Kaleidoscope-LEDEffect-Rainbow.h"
+// #include "Kaleidoscope-LEDEffect-Rainbow.h"
 
 // Support for an LED mode that lights up the keys as you press them
-#include "Kaleidoscope-LED-Stalker.h"
+// #include "Kaleidoscope-LED-Stalker.h"
 
 // Support for an LED mode that prints the keys you press in letters 4px high
-#include "Kaleidoscope-LED-AlphaSquare.h"
+// #include "Kaleidoscope-LED-AlphaSquare.h"
 
 // Support for shared palettes for other plugins, like Colormap below
 #include "Kaleidoscope-LED-Palette-Theme.h"
 
 // Support for an LED mode that lets one configure per-layer color maps
-#include "Kaleidoscope-Colormap.h"
+// #include "Kaleidoscope-Colormap.h"
 
 // Support for Keyboardio's internal keyboard testing mode
 #include "Kaleidoscope-HardwareTestMode.h"
@@ -301,13 +301,13 @@ const macro_t *macroAction(uint8_t macroIndex, uint8_t keyState) {
 // Keyboardio Model 01.
 
 
-static kaleidoscope::plugin::LEDSolidColor solidRed(160, 0, 0);
-static kaleidoscope::plugin::LEDSolidColor solidOrange(140, 70, 0);
-static kaleidoscope::plugin::LEDSolidColor solidYellow(130, 100, 0);
-static kaleidoscope::plugin::LEDSolidColor solidGreen(0, 160, 0);
-static kaleidoscope::plugin::LEDSolidColor solidBlue(0, 70, 130);
-static kaleidoscope::plugin::LEDSolidColor solidIndigo(0, 0, 170);
-static kaleidoscope::plugin::LEDSolidColor solidViolet(130, 0, 120);
+// static kaleidoscope::plugin::LEDSolidColor solidRed(160, 0, 0);
+// static kaleidoscope::plugin::LEDSolidColor solidOrange(140, 70, 0);
+// static kaleidoscope::plugin::LEDSolidColor solidYellow(130, 100, 0);
+// static kaleidoscope::plugin::LEDSolidColor solidGreen(0, 160, 0);
+// static kaleidoscope::plugin::LEDSolidColor solidBlue(0, 70, 130);
+// static kaleidoscope::plugin::LEDSolidColor solidIndigo(0, 0, 170);
+// static kaleidoscope::plugin::LEDSolidColor solidViolet(130, 0, 120);
 
 /** toggleLedsOnSuspendResume toggles the LEDs off when the host goes to sleep,
  * and turns them back on when it wakes up.
@@ -451,101 +451,101 @@ namespace kaleidoscope {
 
           // left row 1
           ::LEDControl.setCrgbAt(3, black);
-          ::LEDControl.setCrgbAt(4, cyan);
-          ::LEDControl.setCrgbAt(11, cyan);
-          ::LEDControl.setCrgbAt(12, cyan);
-          ::LEDControl.setCrgbAt(19, cyan);
-          ::LEDControl.setCrgbAt(20, cyan);
+          ::LEDControl.setCrgbAt(4, letters);
+          ::LEDControl.setCrgbAt(11, letters);
+          ::LEDControl.setCrgbAt(12, letters);
+          ::LEDControl.setCrgbAt(19, letters);
+          ::LEDControl.setCrgbAt(20, letters);
           ::LEDControl.setCrgbAt(26, black);
 
           // left row 2
           ::LEDControl.setCrgbAt(2, black);
-          ::LEDControl.setCrgbAt(5, cyan);
-          ::LEDControl.setCrgbAt(10, cyan);
-          ::LEDControl.setCrgbAt(13, cyan);
-          ::LEDControl.setCrgbAt(18, cyan);
-          ::LEDControl.setCrgbAt(21, cyan);
+          ::LEDControl.setCrgbAt(5, letters);
+          ::LEDControl.setCrgbAt(10, letters);
+          ::LEDControl.setCrgbAt(13, letters);
+          ::LEDControl.setCrgbAt(18, letters);
+          ::LEDControl.setCrgbAt(21, letters);
           ::LEDControl.setCrgbAt(25, black);
 
           // left row 3 (no "middle" button)
-          ::LEDControl.setCrgbAt(1, pink);
-          ::LEDControl.setCrgbAt(6, cyan);
-          ::LEDControl.setCrgbAt(9, cyan);
-          ::LEDControl.setCrgbAt(14, cyan);
-          ::LEDControl.setCrgbAt(17, cyan);
-          ::LEDControl.setCrgbAt(22, cyan);
+          ::LEDControl.setCrgbAt(1, extras);
+          ::LEDControl.setCrgbAt(6, letters);
+          ::LEDControl.setCrgbAt(9, letters);
+          ::LEDControl.setCrgbAt(14, letters);
+          ::LEDControl.setCrgbAt(17, letters);
+          ::LEDControl.setCrgbAt(22, letters);
 
           // left row 4
-          ::LEDControl.setCrgbAt(0, pink);
-          ::LEDControl.setCrgbAt(7, cyan);
-          ::LEDControl.setCrgbAt(8, cyan);
-          ::LEDControl.setCrgbAt(15, cyan);
-          ::LEDControl.setCrgbAt(16, cyan);
-          ::LEDControl.setCrgbAt(23, cyan);
+          ::LEDControl.setCrgbAt(0, extras);
+          ::LEDControl.setCrgbAt(7, letters);
+          ::LEDControl.setCrgbAt(8, letters);
+          ::LEDControl.setCrgbAt(15, letters);
+          ::LEDControl.setCrgbAt(16, letters);
+          ::LEDControl.setCrgbAt(23, letters);
           ::LEDControl.setCrgbAt(24, black);
 
           // thumb left
-          ::LEDControl.setCrgbAt(27, purple);
-          ::LEDControl.setCrgbAt(28, purple);
-          ::LEDControl.setCrgbAt(29, purple);
-          ::LEDControl.setCrgbAt(30, purple);
+          ::LEDControl.setCrgbAt(27, modifiers);
+          ::LEDControl.setCrgbAt(28, modifiers);
+          ::LEDControl.setCrgbAt(29, modifiers);
+          ::LEDControl.setCrgbAt(30, modifiers);
 
           // fn left
-          ::LEDControl.setCrgbAt(31, purple);
+          ::LEDControl.setCrgbAt(31, modifiers);
 
           // fn right
-          ::LEDControl.setCrgbAt(32, purple);
+          ::LEDControl.setCrgbAt(32, modifiers);
 
           // thumb right
-          ::LEDControl.setCrgbAt(33, purple);
-          ::LEDControl.setCrgbAt(34, purple);
-          ::LEDControl.setCrgbAt(35, purple);
-          ::LEDControl.setCrgbAt(36, purple);
+          ::LEDControl.setCrgbAt(33, modifiers);
+          ::LEDControl.setCrgbAt(34, modifiers);
+          ::LEDControl.setCrgbAt(35, modifiers);
+          ::LEDControl.setCrgbAt(36, modifiers);
 
           // right row 1
           ::LEDControl.setCrgbAt(37, black);
-          ::LEDControl.setCrgbAt(43, cyan);
-          ::LEDControl.setCrgbAt(44, cyan);
-          ::LEDControl.setCrgbAt(51, cyan);
-          ::LEDControl.setCrgbAt(52, cyan);
-          ::LEDControl.setCrgbAt(59, cyan);
-          ::LEDControl.setCrgbAt(60, cyan);
+          ::LEDControl.setCrgbAt(43, letters);
+          ::LEDControl.setCrgbAt(44, letters);
+          ::LEDControl.setCrgbAt(51, letters);
+          ::LEDControl.setCrgbAt(52, letters);
+          ::LEDControl.setCrgbAt(59, letters);
+          ::LEDControl.setCrgbAt(60, letters);
 
           // right row 2
           ::LEDControl.setCrgbAt(38, black);
-          ::LEDControl.setCrgbAt(42, cyan);
-          ::LEDControl.setCrgbAt(45, cyan);
-          ::LEDControl.setCrgbAt(50, cyan);
-          ::LEDControl.setCrgbAt(53, cyan);
-          ::LEDControl.setCrgbAt(58, cyan);
-          ::LEDControl.setCrgbAt(61, cyan);
+          ::LEDControl.setCrgbAt(42, letters);
+          ::LEDControl.setCrgbAt(45, letters);
+          ::LEDControl.setCrgbAt(50, letters);
+          ::LEDControl.setCrgbAt(53, letters);
+          ::LEDControl.setCrgbAt(58, letters);
+          ::LEDControl.setCrgbAt(61, letters);
 
           // right row 3 (no "middle" button)
-          ::LEDControl.setCrgbAt(41, cyan);
-          ::LEDControl.setCrgbAt(46, cyan);
-          ::LEDControl.setCrgbAt(49, cyan);
-          ::LEDControl.setCrgbAt(54, cyan);
-          ::LEDControl.setCrgbAt(57, cyan);
-          ::LEDControl.setCrgbAt(62, cyan);
+          ::LEDControl.setCrgbAt(41, letters);
+          ::LEDControl.setCrgbAt(46, letters);
+          ::LEDControl.setCrgbAt(49, letters);
+          ::LEDControl.setCrgbAt(54, letters);
+          ::LEDControl.setCrgbAt(57, letters);
+          ::LEDControl.setCrgbAt(62, letters);
 
           // right row 4
           ::LEDControl.setCrgbAt(39, black);
-          ::LEDControl.setCrgbAt(40, cyan);
-          ::LEDControl.setCrgbAt(47, cyan);
-          ::LEDControl.setCrgbAt(48, cyan);
-          ::LEDControl.setCrgbAt(55, cyan);
-          ::LEDControl.setCrgbAt(56, cyan);
-          ::LEDControl.setCrgbAt(63, cyan);
+          ::LEDControl.setCrgbAt(40, letters);
+          ::LEDControl.setCrgbAt(47, letters);
+          ::LEDControl.setCrgbAt(48, letters);
+          ::LEDControl.setCrgbAt(55, letters);
+          ::LEDControl.setCrgbAt(56, letters);
+          ::LEDControl.setCrgbAt(63, letters);
             }
 
         if (Layer.isActive(PRIMARY_SHIFTED)) {
           // left row 1
           ::LEDControl.setCrgbAt(3, black);
-          ::LEDControl.setCrgbAt(4, yellow);
-          ::LEDControl.setCrgbAt(11, yellow);
-          ::LEDControl.setCrgbAt(12, yellow);
-          ::LEDControl.setCrgbAt(19, yellow);
-          ::LEDControl.setCrgbAt(20, yellow);
+          ::LEDControl.setCrgbAt(4, brackets);
+          ::LEDControl.setCrgbAt(11, brackets);
+          ::LEDControl.setCrgbAt(12, brackets);
+          ::LEDControl.setCrgbAt(19, brackets);
+          ::LEDControl.setCrgbAt(20, brackets);
           ::LEDControl.setCrgbAt(26, black);
 
           // left row 2
@@ -594,11 +594,11 @@ namespace kaleidoscope {
 
           // right row 1
           ::LEDControl.setCrgbAt(37, black);
-          ::LEDControl.setCrgbAt(43, yellow);
-          ::LEDControl.setCrgbAt(44, yellow);
-          ::LEDControl.setCrgbAt(51, yellow);
-          ::LEDControl.setCrgbAt(52, yellow);
-          ::LEDControl.setCrgbAt(59, yellow);
+          ::LEDControl.setCrgbAt(43, brackets);
+          ::LEDControl.setCrgbAt(44, brackets);
+          ::LEDControl.setCrgbAt(51, brackets);
+          ::LEDControl.setCrgbAt(52, brackets);
+          ::LEDControl.setCrgbAt(59, brackets);
           ::LEDControl.setCrgbAt(60, black);
 
           // right row 2
@@ -608,7 +608,7 @@ namespace kaleidoscope {
           ::LEDControl.setCrgbAt(50, black);
           ::LEDControl.setCrgbAt(53, black);
           ::LEDControl.setCrgbAt(58, black);
-          ::LEDControl.setCrgbAt(61, cyan);
+          ::LEDControl.setCrgbAt(61, letters);
 
           // right row 3 (no "middle" button)
           ::LEDControl.setCrgbAt(41, black);
@@ -616,16 +616,16 @@ namespace kaleidoscope {
           ::LEDControl.setCrgbAt(49, black);
           ::LEDControl.setCrgbAt(54, black);
           ::LEDControl.setCrgbAt(57, black);
-          ::LEDControl.setCrgbAt(62, cyan);
+          ::LEDControl.setCrgbAt(62, letters);
 
           // right row 4
           ::LEDControl.setCrgbAt(39, black);
           ::LEDControl.setCrgbAt(40, black);
-          ::LEDControl.setCrgbAt(47, cyan);
-          ::LEDControl.setCrgbAt(48, cyan);
-          ::LEDControl.setCrgbAt(55, cyan);
-          ::LEDControl.setCrgbAt(56, cyan);
-          ::LEDControl.setCrgbAt(63, cyan);
+          ::LEDControl.setCrgbAt(47, letters);
+          ::LEDControl.setCrgbAt(48, letters);
+          ::LEDControl.setCrgbAt(55, letters);
+          ::LEDControl.setCrgbAt(56, letters);
+          ::LEDControl.setCrgbAt(63, letters);
           }
 
         if (Layer.isActive(FUNCTION)) {
@@ -640,16 +640,16 @@ namespace kaleidoscope {
 
           // left row 2
           ::LEDControl.setCrgbAt(2, black);
-          ::LEDControl.setCrgbAt(5, yellow);
-          ::LEDControl.setCrgbAt(10, yellow);
+          ::LEDControl.setCrgbAt(5, brackets);
+          ::LEDControl.setCrgbAt(10, brackets);
           ::LEDControl.setCrgbAt(13, black);
-          ::LEDControl.setCrgbAt(18, yellow);
-          ::LEDControl.setCrgbAt(21, yellow);
+          ::LEDControl.setCrgbAt(18, brackets);
+          ::LEDControl.setCrgbAt(21, brackets);
           ::LEDControl.setCrgbAt(25, black);
 
           // left row 3 (no "middle" button)
           ::LEDControl.setCrgbAt(1, black);
-          ::LEDControl.setCrgbAt(6, pink);
+          ::LEDControl.setCrgbAt(6, extras);
           ::LEDControl.setCrgbAt(9, black);
           ::LEDControl.setCrgbAt(14, black);
           ::LEDControl.setCrgbAt(17, black);
@@ -683,7 +683,7 @@ namespace kaleidoscope {
           ::LEDControl.setCrgbAt(36, black);
 
           // right row 1
-          ::LEDControl.setCrgbAt(37, purple);
+          ::LEDControl.setCrgbAt(37, modifiers);
           ::LEDControl.setCrgbAt(43, black);
           ::LEDControl.setCrgbAt(44, black);
           ::LEDControl.setCrgbAt(51, black);
@@ -692,27 +692,27 @@ namespace kaleidoscope {
           ::LEDControl.setCrgbAt(60, black);
 
           // right row 2
-          ::LEDControl.setCrgbAt(38, purple);
-          ::LEDControl.setCrgbAt(42, purple);
-          ::LEDControl.setCrgbAt(45, yellow);
-          ::LEDControl.setCrgbAt(50, yellow);
-          ::LEDControl.setCrgbAt(53, yellow);
-          ::LEDControl.setCrgbAt(58, yellow);
+          ::LEDControl.setCrgbAt(38, modifiers);
+          ::LEDControl.setCrgbAt(42, modifiers);
+          ::LEDControl.setCrgbAt(45, brackets);
+          ::LEDControl.setCrgbAt(50, brackets);
+          ::LEDControl.setCrgbAt(53, brackets);
+          ::LEDControl.setCrgbAt(58, brackets);
           ::LEDControl.setCrgbAt(61, black);
 
           // right row 3 (no "middle" button)
-          ::LEDControl.setCrgbAt(41, orange);
-          ::LEDControl.setCrgbAt(46, orange);
-          ::LEDControl.setCrgbAt(49, orange);
-          ::LEDControl.setCrgbAt(54, orange);
-          ::LEDControl.setCrgbAt(57, pink);
+          ::LEDControl.setCrgbAt(41, arrows);
+          ::LEDControl.setCrgbAt(46, arrows);
+          ::LEDControl.setCrgbAt(49, arrows);
+          ::LEDControl.setCrgbAt(54, arrows);
+          ::LEDControl.setCrgbAt(57, extras);
           ::LEDControl.setCrgbAt(62, black);
 
           // right row 4
           ::LEDControl.setCrgbAt(39, black);
-          ::LEDControl.setCrgbAt(40, purple);
-          ::LEDControl.setCrgbAt(47, purple);
-          ::LEDControl.setCrgbAt(48, purple);
+          ::LEDControl.setCrgbAt(40, modifiers);
+          ::LEDControl.setCrgbAt(47, modifiers);
+          ::LEDControl.setCrgbAt(48, modifiers);
           ::LEDControl.setCrgbAt(55, black);
           ::LEDControl.setCrgbAt(56, black);
           ::LEDControl.setCrgbAt(63, black);
@@ -721,13 +721,20 @@ namespace kaleidoscope {
 
     private:
       cRGB black = CRGB(0, 0, 0);
-      cRGB cyan = CRGB(67, 255, 210);
-      cRGB blue = CRGB(85, 205, 252);
-      cRGB pink = CRGB(247, 168, 184);
-      cRGB yellow = CRGB(255, 232, 21);
-      cRGB purple = CRGB(194, 21, 255);
-      cRGB orange = CRGB(255, 119, 0);
-      cRGB white = CRGB(255, 255, 255);
+
+      cRGB red = CRGB(160, 0, 0);
+      cRGB orange = CRGB(140, 70, 0);
+      cRGB yellow = CRGB(130, 100, 0);
+      cRGB green = CRGB(0, 160, 0);
+      cRGB blue = CRGB(0, 70, 130);
+      cRGB indigo = CRGB(0, 0, 170);
+      cRGB violet = CRGB(130, 0, 120);
+
+      cRGB letters = orange;
+      cRGB modifiers = blue;
+      cRGB brackets = yellow;
+      cRGB extras = violet;
+      cRGB arrows = indigo;
     };
   }
 }
@@ -806,7 +813,7 @@ KALEIDOSCOPE_INIT_PLUGINS(
 
   // The LED Palette Theme plugin provides a shared palette for other plugins,
   // like Colormap below
-  LEDPaletteTheme,
+  // LEDPaletteTheme,
 
   // The Colormap effect makes it possible to set up per-layer colormaps
   // ColormapEffect,
@@ -855,12 +862,12 @@ void setup() {
 //  NumPad.numPadLayer = NUMPAD;
 
   // We configure the AlphaSquare effect to use RED letters
-  AlphaSquare.color = CRGB(255, 0, 0);
+  // AlphaSquare.color = CRGB(255, 0, 0);
 
   // We set the brightness of the rainbow effects to 150 (on a scale of 0-255)
   // This draws more than 500mA, but looks much nicer than a dimmer effect
-  LEDRainbowEffect.brightness(150);
-  LEDRainbowWaveEffect.brightness(150);
+  // LEDRainbowEffect.brightness(150);
+  // LEDRainbowWaveEffect.brightness(150);
 
   // Set the action key the test mode should listen for to Left Fn
   HardwareTestMode.setActionKey(R3C6);
@@ -868,7 +875,7 @@ void setup() {
   // The LED Stalker mode has a few effects. The one we like is called
   // 'BlazingTrail'. For details on other options, see
   // https://github.com/keyboardio/Kaleidoscope/blob/master/doc/plugin/LED-Stalker.md
-  StalkerEffect.variant = STALKER(BlazingTrail);
+  // StalkerEffect.variant = STALKER(BlazingTrail);
 
   // We want to make sure that the firmware starts with LED effects off
   // This avoids over-taxing devices that don't have a lot of power to share
