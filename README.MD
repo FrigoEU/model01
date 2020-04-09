@@ -1,4 +1,4 @@
 * nix-build release.nix
 * sudo ./flash.sh
-* <sudo pw>
+* # fill in sudo pw
 * hold prog key immediately, seems to not work from eshell
