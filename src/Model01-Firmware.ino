@@ -509,7 +509,7 @@ namespace kaleidoscope {
           ::LEDControl.setCrgbAt(51, letters);
           ::LEDControl.setCrgbAt(52, letters);
           ::LEDControl.setCrgbAt(59, letters);
-          ::LEDControl.setCrgbAt(60, letters);
+          ::LEDControl.setCrgbAt(60, black);
 
           // right row 2
           ::LEDControl.setCrgbAt(38, black);
@@ -734,7 +734,7 @@ namespace kaleidoscope {
       cRGB modifiers = blue;
       cRGB brackets = yellow;
       cRGB extras = violet;
-      cRGB arrows = indigo;
+      cRGB arrows = green;
     };
   }
 }
