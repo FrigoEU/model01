@@ -202,8 +202,8 @@ KEYMAPS(
    [FUNCTION] =  KEYMAP_STACKED
   (___,      Key_F1,               Key_F2,                Key_F3,      Key_F4,            Key_F5,             ___,           
    Key_Home, Key_LeftCurlyBracket, Key_RightCurlyBracket, ___,         LSHIFT(Key_Comma), LSHIFT(Key_Period), ___,
-   Key_Tab,  Key_Escape,           ___,                   ___,         ___,               ___,     
-   Key_End,  ___,                  ___,                   ___,         ___,               ___,                ___,
+   Key_Tab,  Key_Escape,           ___,                   ___,         ___,               Key_Equals,     
+   Key_End,  Key_Semicolon,        ___,                   ___,         Key_Pipe,          ___,                ___,
    ___, Key_Delete, ___, ___,
    ___,
 
