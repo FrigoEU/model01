@@ -143,13 +143,12 @@ enum { MACRO_VERSION_INFO,
 
 */
 
-enum { PRIMARY, PRIMARY_SHIFTED, FUNCTION }; // layers
+enum { PRIMARY, PRIMARY_SHIFTED, FUNCTION, NUMPAD }; // layers
 
 /* This comment temporarily turns off astyle's indent enforcement
      so we can make the keymaps actually resemble the physical key layout better
 */
 // *INDENT-OFF*
-
 
 
 KEYMAPS(
@@ -158,7 +157,7 @@ KEYMAPS(
   (___,                  LSHIFT(Key_2), Key_Backtick, LSHIFT(Key_Quote), Key_Quote,         LSHIFT(Key_3), Key_LEDEffectNext,
    LSHIFT(Key_Backtick), Key_A,         Key_Z,        Key_E,             Key_R,             Key_T,         Key_Tab,
    Key_Enter,            Key_Q,         Key_S,        Key_D,             Key_F,             Key_G,
-   Key_Spacebar,         Key_W,         Key_X,        Key_C,             Key_V,             Key_B,         Key_Escape,
+   Key_Spacebar,         Key_W,         Key_X,        Key_C,             Key_V,             Key_B,         ShiftToLayer(NUMPAD),
    Key_LeftControl,      Key_Backspace, Key_LeftGui,  Key_LeftShift,
    ShiftToLayer(FUNCTION),
 
@@ -170,16 +169,16 @@ KEYMAPS(
    ShiftToLayer(FUNCTION)),
 
    [PRIMARY_SHIFTED] = KEYMAP_STACKED
-   (___, Key_1, Key_2, Key_3, Key_4, Key_5, ___,
+   (___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___, ___, ___, ___,
    ___, ___, ___, ___,
    ___,
 
-   ___, Key_6, Key_7, Key_8, Key_9, Key_0, ___,
    ___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+        ___, ___, ___, ___, ___, ___,
    ___, ___, LSHIFT(Key_Slash), Key_Period, Key_Slash, LSHIFT(Key_Equals), LSHIFT(Key_7), 
    ___, ___, ___, ___,
    ___),
@@ -200,10 +199,10 @@ KEYMAPS(
 //   ___),
    
    [FUNCTION] =  KEYMAP_STACKED
-  (___,      Key_F1,               Key_F2,                Key_F3,      Key_F4,            Key_F5,             ___,           
-   Key_Home, Key_LeftCurlyBracket, Key_RightCurlyBracket, ___,         LSHIFT(Key_Comma), LSHIFT(Key_Period), ___,
-   Key_Tab,  Key_Escape,           ___,                   ___,         ___,               Key_Equals,     
-   Key_End,  Key_Semicolon,        ___,                   ___,         Key_Pipe,          ___,                ___,
+  (___,      Key_F1,               Key_F2,                Key_F3,      Key_F4,                 Key_F5,                  ___,           
+   Key_Home, Key_LeftCurlyBracket, Key_RightCurlyBracket, Key_Pipe,    LSHIFT(Key_Comma)/*<*/, LSHIFT(Key_Period)/*>*/, ___,
+   Key_Tab,  Key_Escape,           Key_LeftBracket,       Key_Period,  Key_RightBracket,       Key_Equals,     
+   Key_End,  Key_F6,               Key_F7,                Key_F8,      Key_F9,                 Key_F10,                 ___,
    ___, Key_Delete, ___, ___,
    ___,
 
@@ -212,6 +211,21 @@ KEYMAPS(
                                Key_LeftArrow,          Key_DownArrow,            Key_UpArrow,              Key_RightArrow,  Key_Enter,        ___,
    ___,                        Consumer_Mute,          Consumer_VolumeDecrement, Consumer_VolumeIncrement, Key_Backslash,   Key_Backslash,    Key_Pipe,
    ___, ___, Key_Enter, ___,
+   ___),
+
+  [NUMPAD] = KEYMAP_STACKED
+  (___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___, ___, ___, ___,
+   ___, ___, ___, ___,
+   ___,
+
+   ___, ___, ___,   ___,   ___,   ___,   ___,
+   ___, ___, Key_7, Key_8, Key_9, ___,   ___,
+        ___, Key_4, Key_5, Key_6, ___,   ___,
+   ___, ___, Key_1, Key_2, Key_3, Key_0, ___, 
+   ___, ___, ___, ___,
    ___)
 ); // KEYMAPS(
 
@@ -482,7 +496,7 @@ namespace kaleidoscope {
           ::LEDControl.setCrgbAt(15, letters);
           ::LEDControl.setCrgbAt(16, letters);
           ::LEDControl.setCrgbAt(23, letters);
-          ::LEDControl.setCrgbAt(24, black);
+          ::LEDControl.setCrgbAt(24, modifiers);
 
           // thumb left
           ::LEDControl.setCrgbAt(27, modifiers);
@@ -541,11 +555,11 @@ namespace kaleidoscope {
         if (Layer.isActive(PRIMARY_SHIFTED)) {
           // left row 1
           ::LEDControl.setCrgbAt(3, black);
-          ::LEDControl.setCrgbAt(4, brackets);
-          ::LEDControl.setCrgbAt(11, brackets);
-          ::LEDControl.setCrgbAt(12, brackets);
-          ::LEDControl.setCrgbAt(19, brackets);
-          ::LEDControl.setCrgbAt(20, brackets);
+          ::LEDControl.setCrgbAt(4, black);
+          ::LEDControl.setCrgbAt(11, black);
+          ::LEDControl.setCrgbAt(12, black);
+          ::LEDControl.setCrgbAt(19, black);
+          ::LEDControl.setCrgbAt(20, black);
           ::LEDControl.setCrgbAt(26, black);
 
           // left row 2
@@ -594,11 +608,11 @@ namespace kaleidoscope {
 
           // right row 1
           ::LEDControl.setCrgbAt(37, black);
-          ::LEDControl.setCrgbAt(43, brackets);
-          ::LEDControl.setCrgbAt(44, brackets);
-          ::LEDControl.setCrgbAt(51, brackets);
-          ::LEDControl.setCrgbAt(52, brackets);
-          ::LEDControl.setCrgbAt(59, brackets);
+          ::LEDControl.setCrgbAt(43, black);
+          ::LEDControl.setCrgbAt(44, black);
+          ::LEDControl.setCrgbAt(51, black);
+          ::LEDControl.setCrgbAt(52, black);
+          ::LEDControl.setCrgbAt(59, black);
           ::LEDControl.setCrgbAt(60, black);
 
           // right row 2
@@ -626,6 +640,96 @@ namespace kaleidoscope {
           ::LEDControl.setCrgbAt(55, letters);
           ::LEDControl.setCrgbAt(56, letters);
           ::LEDControl.setCrgbAt(63, letters);
+          }
+
+        if (Layer.isActive(NUMPAD)) {
+          // left row 1
+          ::LEDControl.setCrgbAt(3, black);
+          ::LEDControl.setCrgbAt(4, black);
+          ::LEDControl.setCrgbAt(11, black);
+          ::LEDControl.setCrgbAt(12, black);
+          ::LEDControl.setCrgbAt(19, black);
+          ::LEDControl.setCrgbAt(20, black);
+          ::LEDControl.setCrgbAt(26, black);
+
+          // left row 2
+          ::LEDControl.setCrgbAt(2, black);
+          ::LEDControl.setCrgbAt(5, black);
+          ::LEDControl.setCrgbAt(10, black);
+          ::LEDControl.setCrgbAt(13, black);
+          ::LEDControl.setCrgbAt(18, black);
+          ::LEDControl.setCrgbAt(21, black);
+          ::LEDControl.setCrgbAt(25, black);
+
+          // left row 3 (no "middle" button)
+          ::LEDControl.setCrgbAt(1, black);
+          ::LEDControl.setCrgbAt(6, black);
+          ::LEDControl.setCrgbAt(9, black);
+          ::LEDControl.setCrgbAt(14, black);
+          ::LEDControl.setCrgbAt(17, black);
+          ::LEDControl.setCrgbAt(22, black);
+
+          // left row 4
+          ::LEDControl.setCrgbAt(0, black);
+          ::LEDControl.setCrgbAt(7, black);
+          ::LEDControl.setCrgbAt(8, black);
+          ::LEDControl.setCrgbAt(15, black);
+          ::LEDControl.setCrgbAt(16, black);
+          ::LEDControl.setCrgbAt(23, black);
+          ::LEDControl.setCrgbAt(24, black);
+
+          // thumb left
+          ::LEDControl.setCrgbAt(27, black);
+          ::LEDControl.setCrgbAt(28, black);
+          ::LEDControl.setCrgbAt(29, black);
+          ::LEDControl.setCrgbAt(30, black);
+
+          // fn left
+          ::LEDControl.setCrgbAt(31, black);
+
+          // fn right
+          ::LEDControl.setCrgbAt(32, black);
+
+          // thumb right
+          ::LEDControl.setCrgbAt(33, black);
+          ::LEDControl.setCrgbAt(34, black);
+          ::LEDControl.setCrgbAt(35, black);
+          ::LEDControl.setCrgbAt(36, black);
+
+          // right row 1
+          ::LEDControl.setCrgbAt(37, black);
+          ::LEDControl.setCrgbAt(43, black);
+          ::LEDControl.setCrgbAt(44, black);
+          ::LEDControl.setCrgbAt(51, black);
+          ::LEDControl.setCrgbAt(52, black);
+          ::LEDControl.setCrgbAt(59, black);
+          ::LEDControl.setCrgbAt(60, black);
+
+          // right row 2
+          ::LEDControl.setCrgbAt(38, black);
+          ::LEDControl.setCrgbAt(42, black);
+          ::LEDControl.setCrgbAt(45, arrows);
+          ::LEDControl.setCrgbAt(50, arrows);
+          ::LEDControl.setCrgbAt(53, arrows);
+          ::LEDControl.setCrgbAt(58, black);
+          ::LEDControl.setCrgbAt(61, black);
+
+          // right row 3 (no "middle" button)
+          ::LEDControl.setCrgbAt(41, black);
+          ::LEDControl.setCrgbAt(46, arrows);
+          ::LEDControl.setCrgbAt(49, arrows);
+          ::LEDControl.setCrgbAt(54, arrows);
+          ::LEDControl.setCrgbAt(57, black);
+          ::LEDControl.setCrgbAt(62, black);
+
+          // right row 4
+          ::LEDControl.setCrgbAt(39, black);
+          ::LEDControl.setCrgbAt(40, black);
+          ::LEDControl.setCrgbAt(47, arrows);
+          ::LEDControl.setCrgbAt(48, arrows);
+          ::LEDControl.setCrgbAt(55, arrows);
+          ::LEDControl.setCrgbAt(56, arrows);
+          ::LEDControl.setCrgbAt(63, black);
           }
 
         if (Layer.isActive(FUNCTION)) {
