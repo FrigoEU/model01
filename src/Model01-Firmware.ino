@@ -143,7 +143,7 @@ enum { MACRO_VERSION_INFO,
 
 */
 
-enum { PRIMARY, PRIMARY_SHIFTED, FUNCTION, NUMPAD }; // layers
+enum { PRIMARY, PRIMARY_SHIFTED, FUNCTION}; // layers
 
 /* This comment temporarily turns off astyle's indent enforcement
      so we can make the keymaps actually resemble the physical key layout better
@@ -157,7 +157,7 @@ KEYMAPS(
   (___,                  LSHIFT(Key_2), Key_Backtick, LSHIFT(Key_Quote), Key_Quote,         LSHIFT(Key_3), Key_LEDEffectNext,
    LSHIFT(Key_Backtick), Key_A,         Key_Z,        Key_E,             Key_R,             Key_T,         Key_Tab,
    Key_Enter,            Key_Q,         Key_S,        Key_D,             Key_F,             Key_G,
-   Key_Spacebar,         Key_W,         Key_X,        Key_C,             Key_V,             Key_B,         ShiftToLayer(NUMPAD),
+   Key_Spacebar,         Key_W,         Key_X,        Key_C,             Key_V,             Key_B,         ___,
    Key_LeftControl,      Key_Backspace, Key_LeftGui,  Key_LeftShift,
    ShiftToLayer(FUNCTION),
 
