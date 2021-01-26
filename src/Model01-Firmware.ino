@@ -158,14 +158,14 @@ KEYMAPS(
    LSHIFT(Key_Backtick), Key_A,         Key_Z,        Key_E,             Key_R,             Key_T,         Key_Tab,
    Key_Enter,            Key_Q,         Key_S,        Key_D,             Key_F,             Key_G,
    Key_Spacebar,         Key_W,         Key_X,        Key_C,             Key_V,             Key_B,         ___,
-   Key_LeftControl,      Key_Backspace, Key_LeftGui,  Key_LeftShift,
+   Key_LeftControl,      Key_Backspace, Key_LeftAlt,  Key_LeftShift,
    ShiftToLayer(FUNCTION),
 
    ___,           LSHIFT(Key_8), Key_Slash, LSHIFT(Key_1), LSHIFT(Key_6),         LSHIFT(Key_5), ___,
    Key_Enter,     Key_Y,         Key_U,     Key_I,         Key_O,                 Key_P,         LSHIFT(Key_4),
                   Key_H,         Key_J,     Key_K,         Key_L,                 Key_M,         Key_Minus,
    ___,           Key_N,         Key_Comma, Key_Semicolon, LSHIFT(Key_Semicolon), Key_Equals,    Key_Pipe,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
+   Key_RightShift, Key_LeftGui, Key_Spacebar, Key_RightControl,
    ShiftToLayer(FUNCTION)),
 
    [PRIMARY_SHIFTED] = KEYMAP_STACKED
